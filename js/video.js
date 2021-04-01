@@ -9,7 +9,7 @@ document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	// volume.innterHTML= 100;
 	video.play();
-	// document.querySelector("#volume").innerHTML=video.volume * 100 + "%";
+	document.querySelector("#volume").innerHTML=video.volume * 100 + "%";
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -51,9 +51,12 @@ document.querySelector("#orig").addEventListener("click", function() {
 
 document.querySelector("#skip").addEventListener("click", function() {
 	video.currentTime += 15;
-	video.addEventListener("ended", myFunc, false);
-	function myFunc(e) {
-		video.load()
+	// video.addEventListener("ended", myFunc, false);
+	// function myFunc(e) {
+	// 	video.load()
+	// }
+	if (video.currentTime >= video.duration) {
+		video.currentTime = 0;
 	}
 	console.log("skipping video: " + video.currentTime);
 });
