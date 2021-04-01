@@ -50,7 +50,7 @@ document.querySelector("#orig").addEventListener("click", function() {
 
 
 document.querySelector("#skip").addEventListener("click", function() {
-	video.currentTime += video.currentTime + 15;
+	video.currentTime += 15;
 	video.addEventListener("ended", myFunc, false);
 	function myFunc(e) {
 		video.load()
@@ -61,13 +61,13 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted === false) {    
            video.muted = true;
-           document.querySelector("#mute").innerHTML="unmute";
-           document.querySelector("#volume").innerHTML="0%";
+           document.querySelector("#mute").innerHTML="Unmute";
+           // document.querySelector("#volume").innerHTML="0%";
     }
 
     else {
         video.muted = false;
-        document.querySelector("#mute").innerHTML="mute";
-        document.querySelector("#volume").innerHTML=video.volume*100 + "%";
+        document.querySelector("#mute").innerHTML="Mute";
+        // document.querySelector("#volume").innerHTML=video.volume*100 + "%";
     }
 });
